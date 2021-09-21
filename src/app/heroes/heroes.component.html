@@ -1,0 +1,21 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="bagde">{{ hero.id }}</span> {{ hero.name }}
+  </li>
+</ul>
+
+<app-here-details [hero]="selectedHero"></app-here-details>
+<!-- ここのパイプはORではない -->
+<!-- パイプ演算子 ( | ) の直後にある単語uppercaseは、 組み込みのUppercasePipeを起動します。 -->
+<!-- パイプは、文字列、通貨金額、日付や、その他の表示データを書式設定するのに適しています。 
+Angularは複数のビルトインパイプを備えており、あなた自身が独自のパイプを作ることもできます。 -->
+<!-- <h2>{{ hero.name | uppercase }} Details</h2>
+<div><span>id: </span>{{ hero.id }}</div>
+<div>
+  <label for="name">>Hero name: </label> -->
+  <!-- [(ngModel)]は双方向バインディング -->
+  <!-- <input id="name" [(ngModel)]="hero.name" placeholder="name">
+</div> -->
